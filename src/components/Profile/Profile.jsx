@@ -1,3 +1,5 @@
+import s from "../Profile/Profile.module.scss";
+
 const Profile = ({
   name,
   tag,
@@ -6,26 +8,26 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div>
-      <div>
-        <img src={image} alt="User avatar" />
-        <p>{name}</p>
+    <div className={s.profile__block}>
+      <div className={s.img__block}>
+        <img className={s.img} src={image} alt="User avatar" />
+        <p className={s.name}>{name}</p>
         <p>@{tag}</p>
         <p>{location}</p>
       </div>
 
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
+      <ul className={s.list}>
+        <li className={s.item}>
+          <span className={s.item__name}>Followers</span>
+          <span className={s.item__value}>{followers}</span>
         </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
+        <li className={s.item}>
+          <span className={s.item__name}>Views</span>
+          <span className={s.item__value}>{views}</span>
         </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
+        <li className={s.item}>
+          <span className={s.item__name}>Likes</span>
+          <span className={s.item__value}>{likes}</span>
         </li>
       </ul>
     </div>
